@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary"
+    >
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_height="250dp"
+        android:layout_width="match_parent"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/tool_bar_collapse"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            app:layout_scrollFlags="exitUntilCollapsed|scroll"
+            app:contentScrim="?attr/colorPrimary"
+            app:title="APP title"
+            android:background="@color/primary_dark"
+            app:expandedTitleMarginStart="48dp"
+            app:expandedTitleMarginEnd="64dp">
+
+<RelativeLayout
+    android:id="@+id/rel1"
+    android:layout_height="match_parent"
+    app:layout_collapseMode="pin"
+    android:layout_width="match_parent">
+
+<android.support.v7.widget.Toolbar
+    android:id="@+id/tool1"
+    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+    app:layout_collapseMode="pin"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    >
+    </android.support.v7.widget.Toolbar>
+
+
+    <ImageView
+        android:id="@+id/poster"
+        android:layout_width="160dp"
+        android:layout_height="250dp"
+        android:layout_gravity="center_horizontal"
+        android:contentDescription="@string/app_name"
+        android:scaleType="fitCenter"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="95dp" />
+
+</RelativeLayout>
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/nested_scroll"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:orientation="vertical">
+
+
+            <com.google.android.youtube.player.YouTubePlayerView
+                android:id="@+id/video1"
+                android:layout_width="match_parent"
+                android:layout_height="200dp">
+
+            </com.google.android.youtube.player.YouTubePlayerView>
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:text="@string/released"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold"
+                android:textColor="@color/primary_text"
+                android:fontFamily="@string/font_family_thin"
+                android:id="@+id/yeardes"
+                />
+
+            <TextView
+                android:id="@+id/year"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@string/font_family_thin"
+
+                android:textColor="@color/primary_text" />
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:id="@+id/dur"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@string/font_family_thin"
+
+                android:textColor="@color/primary_text"
+
+                />
+
+            <TextView
+                android:id="@+id/duration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@string/font_family_thin"
+
+                android:textColor="@color/primary_text"
+                />
+
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:id="@+id/tit"
+                android:text="@string/title"
+                android:textColor="@color/primary_text"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@string/font_family_thin"
+
+                android:textStyle="bold"
+                />
+            <TextView
+                android:id="@+id/mov_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@string/font_family_medium"
+
+                android:textSize="35sp"
+                android:textColor="@color/primary_text"
+                />
+
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@string/font_family_thin"
+
+                android:id="@+id/gen"
+                android:textColor="@color/primary_text"
+                />
+            <TextView
+                android:id="@+id/genre"
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@string/font_family_thin"
+
+                android:layout_height="wrap_content"
+                android:textColor="@color/primary_text" />
+
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:id="@+id/plo"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@string/font_family_thin"
+
+                android:text="@string/description"
+                android:textStyle="bold"
+                android:textColor="@color/primary_text"
+                />
+            <TextView
+                android:id="@+id/plot"
+                android:contentDescription="@string/app_name"
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@string/font_family_thin"
+
+                android:layout_height="wrap_content"
+                android:textColor="@color/primary_text" />
+
+
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:id="@+id/ori"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@string/font_family_thin"
+
+                android:textColor="@color/primary_text"
+                android:text="@string/orit"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:id="@+id/original_title"
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@string/font_family_thin"
+
+                android:textColor="@color/primary_text"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:id="@+id/oril"
+                android:text="@string/oril"
+                android:fontFamily="@string/font_family_thin"
+
+                android:textColor="@color/primary_text"
+
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/original_lang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@string/font_family_thin"
+
+                android:textColor="@color/primary_text" />
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:id="@+id/bud"
+                android:fontFamily="@string/font_family_thin"
+
+                android:textColor="@color/primary_text"
+                android:text="@string/budget"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:id="@+id/Budget"
+                android:layout_width="match_parent"
+                android:fontFamily="@string/font_family_thin"
+
+                android:layout_height="wrap_content"
+                android:textColor="@color/primary_text" />
+       </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+
+
+
+</android.support.design.widget.CoordinatorLayout>

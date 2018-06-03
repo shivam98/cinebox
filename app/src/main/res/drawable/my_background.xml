@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:type="radial" android:gradientRadius="500"
+                android:startColor="#17568A"
+                android:endColor="#494C4F" />
+
+        </shape>
+    </item>
+    <item>
+        <bitmap
+            android:src="@drawable/fragment1"
+            android:tileMode="repeat" />
+    </item>
+</layer-list>

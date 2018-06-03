@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary"
+    >
+
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/nested_scroll"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:id="@+id/img_actor"
+                >
+                </ImageView>
+
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:id="@+id/tit"
+                android:text="@string/name"
+                android:textColor="@color/primary_text"
+                android:layout_marginTop="10dp"
+
+                android:textStyle="bold"
+                />
+            <TextView
+                android:id="@+id/mov_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="35sp"
+                android:textColor="@color/primary_text" />
+
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:id="@+id/plo"
+                android:layout_marginTop="10dp"
+
+                android:text="@string/bio"
+                android:textStyle="bold"
+                android:textColor="@color/primary_text"
+                />
+            <TextView
+                android:id="@+id/biography"
+                android:contentDescription="@string/app_name"
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+
+                android:layout_height="wrap_content"
+                android:textColor="@color/primary_text" />
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:text="@string/released"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold"
+                android:textColor="@color/primary_text"
+
+                android:id="@+id/yeardes"
+                />
+
+            <TextView
+                android:id="@+id/year"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/primary_text" />
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:id="@+id/dur"
+                android:layout_marginTop="10dp"
+
+                android:textColor="@color/primary_text"
+
+                />
+
+            <TextView
+                android:id="@+id/duration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+
+                android:textColor="@color/primary_text"
+                />
+
+
+
+
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+
+                android:id="@+id/gen"
+                android:textColor="@color/primary_text"
+                />
+            <TextView
+                android:id="@+id/genre"
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+
+                android:layout_height="wrap_content"
+                android:textColor="@color/primary_text" />
+
+
+
+
+
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:id="@+id/ori"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/primary_text"
+                android:text="@string/orit"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:id="@+id/original_title"
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/primary_text"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:id="@+id/oril"
+                android:text="@string/oril"
+                android:layout_marginTop="10dp"
+
+                android:textColor="@color/primary_text"
+
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/original_lang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+
+                android:textColor="@color/primary_text" />
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:id="@+id/bud"
+                android:layout_marginTop="10dp"
+
+                android:textColor="@color/primary_text"
+                android:text="@string/budget"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:id="@+id/Budget"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+
+                android:textColor="@color/primary_text" />
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+
+
+
+</android.support.design.widget.CoordinatorLayout>

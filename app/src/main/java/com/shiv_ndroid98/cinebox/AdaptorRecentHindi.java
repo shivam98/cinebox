@@ -45,7 +45,7 @@ public class AdaptorRecentHindi extends RecyclerView.Adapter<AdaptorRecentHindi.
         String rate = movie.getVoteAverage().toString();
         holder.rating_movie.setText(rate);
         //furthur info for bollywood recent movies
-        String posterPath = "http://image.tmdb.org/t/p/w185/"+movie.getPosterPath();
+        String posterPath = "http://image.tmdb.org/t/p/w780/"+movie.getPosterPath();
         Glide.with(holder.image_movie.getContext()).load(posterPath).into(holder.image_movie);
         //holder.type.setText("movie");
 

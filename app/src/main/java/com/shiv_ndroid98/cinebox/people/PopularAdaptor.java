@@ -46,7 +46,7 @@ public class PopularAdaptor extends RecyclerView.Adapter<PopularAdaptor.Vholder>
         holder.text_movie.setText(movie.getName());
         holder.rating.setVisibility(View.INVISIBLE);
         //furthur info for bollywood recent movies
-        String posterPath = "http://image.tmdb.org/t/p/w185/"+movie.getProfilePath();
+        String posterPath = "http://image.tmdb.org/t/p/w780/"+movie.getProfilePath();
        // Glide.with(holder.image_movie.getContext()).load(posterPath).override(180,150).fitCenter().into(holder.image_movie);
 
         Glide.with(holder.image_movie.getContext()).load(posterPath).into(holder.image_movie);

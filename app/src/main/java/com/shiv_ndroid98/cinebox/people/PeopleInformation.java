@@ -54,7 +54,7 @@ public class PeopleInformation extends AppCompatActivity {
                 String t = movieinfo.getName();
                 title.setText(t);
                 biography.setText(movieinfo.getBiography());
-                String posterPath = "http://image.tmdb.org/t/p/w185/" + movieinfo.getProfilePath();
+                String posterPath = "http://image.tmdb.org/t/p/w780/" + movieinfo.getProfilePath();
                 Glide.with(img.getContext()).load(posterPath).into(img);
 
             }

@@ -1,5 +1,6 @@
 package com.shiv_ndroid98.cinebox.people;
 
+import android.content.Intent;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -14,6 +15,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -40,7 +42,7 @@ public class PopularPeople extends AppCompatActivity {
 
     Toolbar toolbar;
     ProgressBar pb;
-
+    RelativeLayout rl;
     List<Result> al;
     Result[] movies;
 
@@ -52,9 +54,12 @@ public class PopularPeople extends AppCompatActivity {
         setContentView(R.layout.activity_popular_people);
 
         BmovieList = (RecyclerView) findViewById(R.id.Bmovie_list);
-
+     //   rl=(RelativeLayout)findViewById(R.id.relative);
+      //  rl.setVisibility(RelativeLayout.INVISIBLE);
         pb = (ProgressBar) findViewById(R.id.pbLoading);
         pb.setVisibility(ProgressBar.VISIBLE);
+
+        //setLayoutInvisible();
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -173,9 +178,9 @@ public class PopularPeople extends AppCompatActivity {
             @Override
             public boolean onQueryTextSubmit(String query) {
 
-
-                String URL = "http://www.omdbapi.com/?s="+query+"&apikey=d8395802";
-
+/*
+                    //String URL = "http://www.omdbapi.com/?s="+query+"&apikey=d8395802";
+                String URL = "https://api.themoviedb.org/3/search/person?api_key=60e3c97f405f942ade7455b8d5a6993f&search_type=ngram&query="+query;
                 StringRequest request = new StringRequest(URL, new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -202,7 +207,11 @@ public class PopularPeople extends AppCompatActivity {
 
 
                 searchView.clearFocus();
+*/
 
+                Intent i = new Intent(PopularPeople.this,PeopleSearchActivity.class);
+                i.putExtra("query",query);
+                startActivity(i);
                 return true;
             }
 
@@ -225,5 +234,15 @@ public class PopularPeople extends AppCompatActivity {
 
 
         return super.onOptionsItemSelected(item);
+    }
+    public void setLayoutInvisible() {
+        if (rl.getVisibility() == View.VISIBLE) {
+            rl.setVisibility(View.GONE);
+        }
+    }
+    public void setLayoutVisible() {
+        if (rl.getVisibility() == View.GONE) {
+            rl.setVisibility(View.VISIBLE);
+        }
     }
 }

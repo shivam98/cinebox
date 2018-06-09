@@ -2,6 +2,7 @@ package com.shiv_ndroid98.cinebox.people;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,14 +14,13 @@ import com.bumptech.glide.Glide;
 import com.shiv_ndroid98.cinebox.Information;
 import com.shiv_ndroid98.cinebox.R;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 import static com.shiv_ndroid98.cinebox.R.id.rating;
 
-/**
- * Created by Shivam98 on 4/20/2018.
- */
 
 public class PopularAdaptor extends RecyclerView.Adapter<PopularAdaptor.Vholder> {
 
@@ -36,7 +36,7 @@ public class PopularAdaptor extends RecyclerView.Adapter<PopularAdaptor.Vholder>
     @Override
     public Vholder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        View view = inflater.inflate(R.layout.item_user_layout,parent,false);
+        View view = inflater.inflate(R.layout.popular_layout,parent,false);
         return new Vholder(view,context);
     }
 
@@ -49,7 +49,7 @@ public class PopularAdaptor extends RecyclerView.Adapter<PopularAdaptor.Vholder>
         String posterPath = "http://image.tmdb.org/t/p/w780/"+movie.getProfilePath();
        // Glide.with(holder.image_movie.getContext()).load(posterPath).override(180,150).fitCenter().into(holder.image_movie);
 
-        Glide.with(holder.image_movie.getContext()).load(posterPath).into(holder.image_movie);
+        Glide.with(holder.image_movie.getContext()).load(posterPath).placeholder(R.drawable.backimage).into(holder.image_movie);
 
     }
 
@@ -85,8 +85,12 @@ public class PopularAdaptor extends RecyclerView.Adapter<PopularAdaptor.Vholder>
             Result movie = data.get(position);
             String title = (movie.getName());
             String id =  movie.getId().toString();
+
+            List<KnownFor>li = movie.getKnownFor();
             Intent intent = new Intent(this.context,PeopleInformation.class);
-           // intent.putExtra("title",title);
+            Bundle args = new Bundle();
+            args.putSerializable("ARRAYLIST",(Serializable)li);
+            intent.putExtra("BUNDLE",args);           // intent.putExtra("title",title);
             intent.putExtra("id",id);
             this.context.startActivity(intent);
         }

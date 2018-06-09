@@ -155,7 +155,7 @@ public class PopularMovies extends AppCompatActivity {
 
 
     }
-
+/*
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -229,7 +229,7 @@ public class PopularMovies extends AppCompatActivity {
         });
         return super.onCreateOptionsMenu(menu);
     }
-
+*/
 
 
     @Override

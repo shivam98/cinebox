@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
 
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,12 +7,40 @@
     tools:context="com.shiv_ndroid98.cinebox.spashscreen.SplashScreenActivity">
     <ImageView
         android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-
-            android:layout_centerHorizontal="true"
+        android:layout_width="125dp"
+        android:layout_gravity="center"
+        android:id="@+id/imgg"
         android:layout_centerVertical="true"
         android:src="@drawable/food"
         android:contentDescription="@string/app_name"
+        android:layout_marginBottom="50dp"
         />
 
-</RelativeLayout>
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:fontFamily="@string/font_family_thin"
+        android:textSize="30sp"
+        android:layout_marginTop="70dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="15dp"
+        android:textColor="@color/primary_text"
+        android:text="Box"
+        />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="45dp"
+        android:textStyle="normal"
+        android:fontFamily="@string/font_family_thin"
+        android:text="Cine"
+android:layout_marginEnd="8dp"
+        android:textColor="@color/primary_text"
+        android:textSize="30sp"
+
+        />
+
+</FrameLayout>

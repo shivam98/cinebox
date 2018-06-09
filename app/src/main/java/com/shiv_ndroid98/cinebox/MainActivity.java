@@ -56,11 +56,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.activity_main);
 
         movieList = (RecyclerView) findViewById(movie_list);
-        /*
-        movieList.setLayoutManager(new LinearLayoutManager(this));*/
 
-        /*StaggeredGridLayoutManager mstaggeredGridLayoutManager = new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL);
-        movieList.setLayoutManager(mstaggeredGridLayoutManager);*/
 
 
         GridLayoutManager mgridlayoutmanager = new GridLayoutManager(this, 2);
@@ -206,55 +202,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             public boolean onQueryTextSubmit(String query) {
 
 
-                String URLNEXT = "https://api.themoviedb.org/3/search/movie?api_key=60e3c97f405f942ade7455b8d5a6993f&query="+query;    //made change(1)
+                Intent i = new Intent(MainActivity.this,MovieSearch.class);
+                i.putExtra("query",query);
+                startActivity(i);
 
-
-                movieList.setVisibility(RecyclerView.INVISIBLE);
-                pb.setVisibility(ProgressBar.VISIBLE);
-
-
-                adaptor = new AdaptorRecentHindi(MainActivity.this);
-                movieList.setAdapter(adaptor);
-
-                StringRequest request = new StringRequest(URLNEXT, new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        Log.d("CODE", response);
-                        GsonBuilder gsonBuilder = new GsonBuilder();
-                        Gson gson = gsonBuilder.create();
-                        //Movie movie =  gson.fromJson(response,Movie.class);
-                        pb.setVisibility(ProgressBar.INVISIBLE);
-                        movieList.setVisibility(RecyclerView.VISIBLE);
-
-                        HindiMoviesRecent hindi_movies_recent = gson.fromJson(response, HindiMoviesRecent.class);
-
-                      //  List<Result> al1 = hindi_movies_recent.getResults();
-
-                        //adaptor.addItems(al1);
-
-
-                        al = hindi_movies_recent.getResults();
-                        //Result[] movies = new Result[al.size()];
-                        movies = new Result[al.size()];
-                        al.toArray(movies);
-
-                        adaptor.addItems(Arrays.asList(movies));
-
-
-                       // Log.d("TAG", movies[0].getTitle());
-                    }
-                }, new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(MainActivity.this, "Something went wrong ! ", Toast.LENGTH_SHORT).show();
-                    }
-                });
-
-                RequestQueue queue = Volley.newRequestQueue(MainActivity.this);
-                queue.add(request);
-
-                searchView.clearFocus();
-
+                //searchView.clearFocus();
                 return true;
             }
 

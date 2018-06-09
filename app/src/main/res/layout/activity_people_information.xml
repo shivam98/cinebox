@@ -8,7 +8,23 @@
     android:background="@color/primary"
     >
 
-
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <include
+            layout="@layout/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ProgressBar
+                android:id="@+id/pbLoading"
+                android:visibility="invisible"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -20,19 +36,49 @@
             android:padding="10dp"
             android:orientation="vertical">
 
+
+
+
+
+
+            <RelativeLayout
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
             <ImageView
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
+                android:layout_height="250dp"
+                android:layout_width="160dp"
                 android:id="@+id/img_actor"
+
                 >
                 </ImageView>
-
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/img_actor"
+        android:fontFamily="@string/font_family_medium"
+        android:text="Born"
+        android:textColor="@color/primary_text"
+        android:id="@+id/born"/>
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/born"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_toRightOf="@id/img_actor"
+        android:textColor="@color/primary_text"
+        android:fontFamily="@string/font_family_thin"
+        android:id="@+id/borndate"/>
+</RelativeLayout>
 
             <TextView
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:id="@+id/tit"
                 android:text="@string/name"
+                android:fontFamily="@string/font_family_medium"
                 android:textColor="@color/primary_text"
                 android:layout_marginTop="10dp"
 
@@ -42,7 +88,9 @@
                 android:id="@+id/mov_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@string/font_family_thin"
+                android:textStyle="bold"
                 android:textSize="35sp"
                 android:textColor="@color/primary_text" />
 
@@ -52,7 +100,7 @@
                 android:layout_width="match_parent"
                 android:id="@+id/plo"
                 android:layout_marginTop="10dp"
-
+                android:fontFamily="@string/font_family_medium"
                 android:text="@string/bio"
                 android:textStyle="bold"
                 android:textColor="@color/primary_text"
@@ -62,14 +110,14 @@
                 android:contentDescription="@string/app_name"
                 android:layout_width="match_parent"
                 android:layout_marginTop="10dp"
-
+                android:fontFamily="@string/font_family_thin"
                 android:layout_height="wrap_content"
                 android:textColor="@color/primary_text" />
 
             <TextView
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
-                android:text="@string/released"
+                android:text="@string/title"
                 android:layout_marginTop="10dp"
                 android:textStyle="bold"
                 android:textColor="@color/primary_text"
@@ -124,65 +172,32 @@
                 android:textColor="@color/primary_text" />
 
 
-
-
-
-
-            <TextView
-                android:layout_height="wrap_content"
+            <FrameLayout
                 android:layout_width="match_parent"
-                android:id="@+id/ori"
-                android:layout_marginTop="10dp"
-                android:textColor="@color/primary_text"
-                android:text="@string/orit"
-                android:textStyle="bold"
-                />
-            <TextView
-                android:id="@+id/original_title"
-                android:layout_width="match_parent"
-                android:layout_marginTop="10dp"
-                android:layout_height="wrap_content"
-                android:textColor="@color/primary_text"
-                android:textSize="14sp" />
+                android:layout_height="wrap_content">
 
-            <TextView
-                android:layout_height="wrap_content"
-                android:layout_width="match_parent"
-                android:id="@+id/oril"
-                android:text="@string/oril"
-                android:layout_marginTop="10dp"
+                <ProgressBar
+                    android:id="@+id/pbLoading1"
+                    android:visibility="invisible"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
 
-                android:textColor="@color/primary_text"
+                <android.support.v7.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="visible"
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/movie_list">
 
-                android:textStyle="bold"/>
-            <TextView
-                android:id="@+id/original_lang"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
 
-                android:textColor="@color/primary_text" />
+                </android.support.v7.widget.RecyclerView>
+            </FrameLayout>
 
-            <TextView
-                android:layout_height="wrap_content"
-                android:layout_width="match_parent"
-                android:id="@+id/bud"
-                android:layout_marginTop="10dp"
-
-                android:textColor="@color/primary_text"
-                android:text="@string/budget"
-                android:textStyle="bold"
-                />
-            <TextView
-                android:id="@+id/Budget"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-
-                android:textColor="@color/primary_text" />
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
-
+        </FrameLayout>
+    </LinearLayout>
 
 
 

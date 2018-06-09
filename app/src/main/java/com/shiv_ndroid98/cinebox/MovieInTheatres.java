@@ -4,6 +4,8 @@ import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutCompat;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
@@ -24,6 +26,8 @@ import com.google.gson.GsonBuilder;
 
 import java.util.Arrays;
 import java.util.List;
+
+import static android.icu.lang.UCharacter.GraphemeClusterBreak.L;
 
 public class MovieInTheatres extends AppCompatActivity {
 
@@ -56,7 +60,8 @@ public class MovieInTheatres extends AppCompatActivity {
 
         GridLayoutManager mgridlayoutmanager = new GridLayoutManager(this,2);
         BmovieList.setLayoutManager(mgridlayoutmanager);
-
+       // LinearLayoutManager mlinear = new LinearLayoutManager(this);
+        //BmovieList.setLayoutManager(mlinear);
         if(getSupportActionBar()!=null)
         {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -68,7 +73,7 @@ public class MovieInTheatres extends AppCompatActivity {
             public void onLoadMore(int page, int totalItemsCount, RecyclerView view) {
                 // Triggered only when new data needs to be appended to the list
                 // Add whatever code is needed to append new items to the bottom of the list
-                loadNextDataFromApi(page);
+                //loadNextDataFromApi(page);
             }
         };
 
@@ -156,7 +161,7 @@ public class MovieInTheatres extends AppCompatActivity {
     }
 
 
-    @Override
+    /*@Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_search, menu);
@@ -206,7 +211,7 @@ public class MovieInTheatres extends AppCompatActivity {
         });
         return super.onCreateOptionsMenu(menu);
     }
-
+*/
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 

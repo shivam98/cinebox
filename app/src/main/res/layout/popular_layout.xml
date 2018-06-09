@@ -14,12 +14,12 @@
         android:layout_height="fill_parent"
         android:id="@+id/framelayout"
         >
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="240dp"
-        android:adjustViewBounds="true"
-        android:scaleType="fitXY"
-        android:id="@+id/img_movie"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:id="@+id/img_movie"/>
 
 
         <TextView
@@ -29,47 +29,46 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:background="#616161"
-            android:padding="2dp"
             android:backgroundTintMode="multiply"
             android:text="@string/app_name"
             android:textAlignment="center"
+            android:padding="2dp"
             android:fontFamily="@string/font_family_thin"
             android:textSize="16sp" />
         <RelativeLayout
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:id="@+id/relative"
+            android:visibility="gone"
             android:layout_marginTop="20dp"
             android:background="#616161"
             android:layout_gravity="top">
             <TextView
-            android:id="@+id/rating"
-            style="@style/TextAppearance.AppCompat.Title"
-            android:layout_width="wrap_content"
-            android:layout_marginStart="5sp"
-            android:layout_height="wrap_content"
-                android:padding="2dp"
-                android:paddingEnd="0dp"
+                android:id="@+id/rating"
+                style="@style/TextAppearance.AppCompat.Title"
+                android:layout_width="wrap_content"
+                android:layout_marginStart="5sp"
+                android:layout_height="wrap_content"
                 android:fontFamily="@string/font_family_thin"
-            android:backgroundTintMode="multiply"
-            android:textSize="16sp"
-            />
-           <ImageView
-               android:layout_height="wrap_content"
-               android:layout_width="wrap_content"
-               android:layout_toEndOf="@+id/rating"
+                android:backgroundTintMode="multiply"
+                android:padding="2dp"
+                android:textSize="16sp"
+                />
+            <ImageView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_toEndOf="@+id/rating"
 
-               android:adjustViewBounds="true"
-               android:maxHeight="19dp"
-               android:maxWidth="19dp"
-               android:layout_marginTop="3dp"
-               android:layout_marginStart="1dp"
-               android:padding="2dp"
-               android:scaleType="fitCenter"
-               android:src="@drawable/darkstar"
+                android:adjustViewBounds="true"
+                android:maxHeight="17dp"
+                android:maxWidth="17dp"
+                android:paddingTop="3dp"
+                android:layout_marginStart="2dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/starr"
 
-               >
-               </ImageView>
+                >
+            </ImageView>
         </RelativeLayout>
 
     </FrameLayout>

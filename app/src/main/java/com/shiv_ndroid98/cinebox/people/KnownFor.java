@@ -1,11 +1,12 @@
 
 package com.shiv_ndroid98.cinebox.people;
 
+import java.io.Serializable;
 import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class KnownFor {
+public class KnownFor implements Serializable{
 
     @SerializedName("vote_average")
     @Expose

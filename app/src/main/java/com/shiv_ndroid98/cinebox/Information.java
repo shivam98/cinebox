@@ -41,7 +41,7 @@ public class Information extends YouTubeBaseActivity {
 	ImageView img;
 	TextView title, plot;
 	TextView release_date, duration, genre, o_title, o_lang, budget;
-	String t, id;
+	String t, id, poster;
 
 	YouTubePlayerView youplay;
 	YouTubePlayer.OnInitializedListener onInitializedListener;
@@ -63,7 +63,7 @@ public class Information extends YouTubeBaseActivity {
 
 		t = getIntent().getStringExtra("title");
 		id = getIntent().getStringExtra("id");
-
+		poster = getIntent().getStringExtra("backdrop");
 		youplay = findViewById(R.id.video1);
 
 		makeTextViewResizable(plot, 3, "View More", true);
@@ -144,6 +144,10 @@ public class Information extends YouTubeBaseActivity {
 						TMDBMovieInfo movieinfo = gson.fromJson(response, TMDBMovieInfo.class);
 						//Glide.with(img.getContext()).load(movieinfo.getPoster()).into(img);
 
+						//String posterPath = "http://image.tmdb.org/t/p/w780/" + movieinfo.getPosterPath();
+						String posterPath = "http://image.tmdb.org/t/p/w780/" + poster;
+						Glide.with(img.getContext()).load(posterPath).placeholder(R.drawable.backimage).into(img);
+
 						title.setText(t);
 						release_date.setText(movieinfo.getReleaseDate());
 
@@ -163,8 +167,7 @@ public class Information extends YouTubeBaseActivity {
 
 						plot.setText(movieinfo.getOverview());
 
-						String posterPath = "http://image.tmdb.org/t/p/w780/" + movieinfo.getPosterPath();
-						Glide.with(img.getContext()).load(posterPath).into(img);
+
 
 					} catch (Exception e) {
 						e.printStackTrace();

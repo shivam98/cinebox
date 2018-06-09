@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.shiv_ndroid98.cinebox.people.KnownFor;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -46,7 +47,7 @@ public class AdaptorRecentHindi extends RecyclerView.Adapter<AdaptorRecentHindi.
         holder.rating_movie.setText(rate);
         //furthur info for bollywood recent movies
         String posterPath = "http://image.tmdb.org/t/p/w780/"+movie.getPosterPath();
-        Glide.with(holder.image_movie.getContext()).load(posterPath).into(holder.image_movie);
+        Glide.with(holder.image_movie.getContext()).load(posterPath).placeholder(R.drawable.backimage).into(holder.image_movie);
         //holder.type.setText("movie");
 
     }
@@ -61,6 +62,7 @@ public class AdaptorRecentHindi extends RecyclerView.Adapter<AdaptorRecentHindi.
         data.addAll(items);
         notifyDataSetChanged();
     }
+
 
     public class Vholder extends RecyclerView.ViewHolder implements View.OnClickListener
     {
@@ -84,9 +86,11 @@ public class AdaptorRecentHindi extends RecyclerView.Adapter<AdaptorRecentHindi.
             Result movie = data.get(position);
             String title = (movie.getTitle());
             String id =  movie.getId().toString();
+            String poster = movie.getBackdropPath().toString();
             Intent intent = new Intent(this.context,Information.class);
             intent.putExtra("title",title);
             intent.putExtra("id",id);
+            intent.putExtra("backdrop",poster);
             this.context.startActivity(intent);
         }
     }

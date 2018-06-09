@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <group
         android:id="@+id/menu_top"
         android:checkableBehavior="none">
-<item android:id="@+id/db" android:title="Dashboard" android:icon="@drawable/fragment1"/>
-    <item android:id="@+id/movieintheatre" android:title="In Theatres" android:icon="@drawable/fragment3"/>
-    <item android:id="@+id/popular" android:title="Popular" android:icon="@drawable/fragment2"/>
-    <item android:id="@+id/bollywood" android:title="Bollywood" android:icon="@drawable/fragment2" />
-    <item android:id="@+id/people" android:title="People" android:icon="@drawable/fragment3"/>
+<item android:id="@+id/db" android:title="Home" android:icon="@drawable/home"
+    />
+    <item android:id="@+id/movieintheatre" android:title="In Theatres" android:icon="@drawable/theater"/>
+    <item android:id="@+id/popular" android:title="Popular" android:icon="@drawable/popular"/>
+    <item android:id="@+id/bollywood" android:title="Bollywood" android:icon="@drawable/filmstrip" />
+    <item android:id="@+id/people" android:title="People" android:icon="@drawable/happyman"/>
 </group>
     <group
         android:id="@+id/menu_bottom"
@@ -15,7 +17,7 @@
 
         <item
             android:id="@+id/about"
-            android:icon="@drawable/fragment3"
+            android:icon="@drawable/about"
             android:title="@string/about" >
         </item>
     </group>
